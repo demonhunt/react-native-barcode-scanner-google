@@ -110,5 +110,6 @@ export const Exception = {
 // Methods that the user (dev) might access to pause/resume the scanner at will
 export const pauseScanner = scannerModule.pause;
 export const resumeScanner = scannerModule.resume;
+export const setBarcodeTest = scannerModule.setBarcodeTest;
 
 export default BarcodeScanner;

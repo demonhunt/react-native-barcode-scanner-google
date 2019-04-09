@@ -103,16 +103,16 @@ public class BarcodeScannerView extends ViewGroup implements CameraSource.AutoFo
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        if (!hasCameraPermission()) {
-            // No camera permission. Alert user.
-            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-            builder.setTitle("No Camera permission")
-                .setMessage("Enable camera permission in settings to use the scanner.")
-                .setPositiveButton("Ok", null)
-                .show();
+        // if (!hasCameraPermission()) {
+        //     // No camera permission. Alert user.
+        //     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        //     builder.setTitle("No Camera permission")
+        //         .setMessage("Enable camera permission in settings to use the scanner.")
+        //         .setPositiveButton("Ok", null)
+        //         .show();
 
-            return;
-        }
+        //     return;
+        // }
 
         /**
          * Check for a few other things that the device needs for the scanner to work.

@@ -96,6 +96,25 @@ public class BarcodeScannerModule extends ReactContextBaseJavaModule implements 
     }
 
     @ReactMethod
+    public void setBarcodeTest(int barcodeTypes, Promise promise) {
+        if (setBarcodeTypeTest1(barcodeTypes))
+            promise.resolve(null);
+        else
+            promise.reject("3", "Attempted to setBarcodeTest barcode scanner before scanner view was instantiated.");
+    }
+
+ private boolean setBarcodeTypeTest1(int barcodeTypes) {
+        BarcodeScannerView view = mBarcodeScannerManager.getBarcodeScannerView();
+
+        if (view != null) {
+            view.setBarcodeTypes(barcodeTypes);
+        }
+
+        return view != null;
+    }
+
+
+    @ReactMethod
     public void pause(Promise promise) {
         if (pause())
             promise.resolve(null);
