@@ -368,10 +368,7 @@ public class BarcodeScannerView extends ViewGroup implements CameraSource.AutoFo
     }
 
     private void sendNativeEvent(String key, WritableMap event) {
-        if (getId() < 0) {
-            Log.w(TAG, "Tried to send native event with negative id!");
-            return;
-        }
+       
 
         event.putString("key", key);
 
